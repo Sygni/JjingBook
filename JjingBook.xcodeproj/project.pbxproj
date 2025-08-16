@@ -12,6 +12,15 @@
 		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
 		3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A552E50A22A00E69ACF /* BookStackView.swift */; };
 		3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A572E50A23900E69ACF /* AddBookView.swift */; };
+		3BFA65EF2E50BDC0000601D4 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */; };
+		3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F02E50BE9B000601D4 /* Secrets.swift */; };
+		3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */; };
+		3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */; };
+		3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */; };
+		3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */; };
+		3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FC2E50C167000601D4 /* TextDetect.swift */; };
+		3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */; };
+		3BFA66012E50C6D6000601D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA66002E50C6D6000601D4 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,15 @@
 		3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JjingBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC30A552E50A22A00E69ACF /* BookStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStackView.swift; sourceTree = "<group>"; };
 		3BC30A572E50A23900E69ACF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		3BFA65F02E50BE9B000601D4 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchService.swift; sourceTree = "<group>"; };
+		3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksClient.swift; sourceTree = "<group>"; };
+		3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65FC2E50C167000601D4 /* TextDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetect.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBookView.swift; sourceTree = "<group>"; };
+		3BFA66002E50C6D6000601D4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -88,6 +106,7 @@
 		3BC30A152E5093BA00E69ACF = {
 			isa = PBXGroup;
 			children = (
+				3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */,
 				3BC30A542E50A19600E69ACF /* Utils */,
 				3BC30A532E50A18E00E69ACF /* Services */,
 				3BC30A522E50A18700E69ACF /* ViewModels */,
@@ -121,6 +140,7 @@
 		3BC30A512E50A18300E69ACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */,
 				3BC30A572E50A23900E69ACF /* AddBookView.swift */,
 				3BC30A552E50A22A00E69ACF /* BookStackView.swift */,
 				3BC30A232E5093BA00E69ACF /* ContentView.swift */,
@@ -131,6 +151,7 @@
 		3BC30A522E50A18700E69ACF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -138,6 +159,8 @@
 		3BC30A532E50A18E00E69ACF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3BFA65F52E50BEE6000601D4 /* Books */,
+				3BFA65F42E50BEDD000601D4 /* Networking */,
 				3BC30A2A2E5093BE00E69ACF /* Persistence.swift */,
 			);
 			path = Services;
@@ -146,8 +169,28 @@
 		3BC30A542E50A19600E69ACF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3BFA65F02E50BE9B000601D4 /* Secrets.swift */,
+				3BFA65FC2E50C167000601D4 /* TextDetect.swift */,
+				3BFA66002E50C6D6000601D4 /* Theme.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3BFA65F42E50BEDD000601D4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3BFA65F52E50BEE6000601D4 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */,
+				3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFA65EF2E50BDC0000601D4 /* APIKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,10 +339,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */,
+				3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */,
+				3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */,
+				3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */,
 				3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */,
 				3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */,
+				3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */,
 				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,
+				3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */,
+				3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */,
+				3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */,
 				3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */,
+				3BFA66012E50C6D6000601D4 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

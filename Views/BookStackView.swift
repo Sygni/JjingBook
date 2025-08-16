@@ -9,47 +9,30 @@ import SwiftUI
 
 struct BookStackView: View {
     let book: Book
-    
-    private var bookHeight: CGFloat {
-        let pages = CGFloat(book.pages)
-        let minHeight: CGFloat = 20
-        let maxHeight: CGFloat = 100
-        let baseHeight = pages / 10 // 10페이지당 1포인트
-        
-        // 외국어 가중치 적용
-        let multiplier = book.isKorean ? 1.0 : 1.5
-        let finalHeight = baseHeight * multiplier
-        
-        return min(max(finalHeight, minHeight), maxHeight)
-    }
-    
-    private var fontSize: CGFloat {
-        // 책 높이에 비례한 폰트 크기
-        let height = bookHeight
-        return max(min(height * 0.3, 16), 10) // 최소 10, 최대 16
-    }
-    
+
     var body: some View {
+        let isKo = book.isKorean
+        let h = spineHeight(pages: book.pages, isKorean: isKo)
+        let colors = isKo ? [Palette.koTop, Palette.koBottom] : [Palette.enTop, Palette.enBottom]
+
         ZStack {
-            // 책 배경
-            RoundedRectangle(cornerRadius: 4)
-                .fill(book.isKorean ? Color.blue.opacity(0.7) : Color.orange.opacity(0.7))
-                .frame(height: bookHeight)
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.black.opacity(0.3), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(Palette.stroke, lineWidth: 1)
                 )
-            
-            // 책 제목
-            HStack {
-                Text(book.title ?? "Untitled")
-                    .font(.system(size: fontSize, weight: .medium))
-                    .foregroundColor(.white)
-                    .lineLimit(1)
-                    .padding(.horizontal, 8)
-                Spacer()
-            }
+
+            // ✅ 제목은 진하게, 라이트/다크 모두 잘 보이도록 시스템 label 색상 사용
+            Text(book.title ?? "")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(Palette.textDark)
+                .lineLimit(1)
+                .padding(.horizontal, 12)
+                .shadow(color: .white.opacity(0.15), radius: 0, x: 0, y: 1) // (옵션) 밝은 배경에서 미세한 또렷함
         }
-        .shadow(radius: 2, x: 0, y: 1)
+        .frame(height: h)
+        //.padding(.horizontal, 6)  // ❌ 이거 제거 (부모에서 위치/폭 컨트롤)
+        // ✅ 사이 간격 “없음”을 위해 .padding(.vertical) 제거
     }
 }

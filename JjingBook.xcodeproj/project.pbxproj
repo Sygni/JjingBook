@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A232E5093BA00E69ACF /* ContentView.swift */; };
+		3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2A2E5093BE00E69ACF /* Persistence.swift */; };
+		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
+		3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A552E50A22A00E69ACF /* BookStackView.swift */; };
+		3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A572E50A23900E69ACF /* AddBookView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3BC30A342E5093BF00E69ACF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,8 +33,13 @@
 
 /* Begin PBXFileReference section */
 		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC30A232E5093BA00E69ACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3BC30A2A2E5093BE00E69ACF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JjingBook.xcdatamodel; sourceTree = "<group>"; };
 		3BC30A332E5093BF00E69ACF /* JjingBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JjingBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JjingBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC30A552E50A22A00E69ACF /* BookStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStackView.swift; sourceTree = "<group>"; };
+		3BC30A572E50A23900E69ACF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +88,11 @@
 		3BC30A152E5093BA00E69ACF = {
 			isa = PBXGroup;
 			children = (
+				3BC30A542E50A19600E69ACF /* Utils */,
+				3BC30A532E50A18E00E69ACF /* Services */,
+				3BC30A522E50A18700E69ACF /* ViewModels */,
+				3BC30A512E50A18300E69ACF /* Views */,
+				3BC30A502E50A14000E69ACF /* Models */,
 				3BC30A202E5093BA00E69ACF /* JjingBook */,
 				3BC30A362E5093BF00E69ACF /* JjingBookTests */,
 				3BC30A402E5093BF00E69ACF /* JjingBookUITests */,
@@ -90,6 +108,46 @@
 				3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC30A502E50A14000E69ACF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BC30A512E50A18300E69ACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BC30A572E50A23900E69ACF /* AddBookView.swift */,
+				3BC30A552E50A22A00E69ACF /* BookStackView.swift */,
+				3BC30A232E5093BA00E69ACF /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BC30A522E50A18700E69ACF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3BC30A532E50A18E00E69ACF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3BC30A2A2E5093BE00E69ACF /* Persistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3BC30A542E50A19600E69ACF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */,
+				3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */,
+				3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */,
+				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,
+				3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +621,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */,
+			);
+			currentVersion = 3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */;
+			path = JjingBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3BC30A162E5093BA00E69ACF /* Project object */;
 }

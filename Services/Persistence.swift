@@ -14,15 +14,25 @@ struct PersistenceController {
     static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        
+        // 샘플 Book 데이터 생성
+        let book1 = Book(context: viewContext)
+        book1.title = "해리포터와 마법사의 돌"
+        book1.author = "J.K. 롤링"
+        book1.pages = 320
+        book1.isKorean = false
+        book1.dateRead = Date()
+        
+        let book2 = Book(context: viewContext)
+        book2.title = "코스모스"
+        book2.author = "칼 세이건"
+        book2.pages = 500
+        book2.isKorean = false
+        book2.dateRead = Date()
+        
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }

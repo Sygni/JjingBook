@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA77B6D2E5610D700EBC56C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */; };
+		3BA77B712E56133000EBC56C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B702E56132D00EBC56C /* Config.swift */; };
+		3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
+		3BA77B752E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
+		3BA77B762E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
 		3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A232E5093BA00E69ACF /* ContentView.swift */; };
 		3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2A2E5093BE00E69ACF /* Persistence.swift */; };
 		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
@@ -41,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BA77B6C2E5610D700EBC56C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		3BA77B702E56132D00EBC56C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3BA77B732E5619A600EBC56C /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
 		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC30A232E5093BA00E69ACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3BC30A2A2E5093BE00E69ACF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -60,9 +68,22 @@
 		3BFA66002E50C6D6000601D4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3BA77B6F2E56122E00EBC56C /* Exceptions for "JjingBook" folder in "JjingBook" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3BC30A1D2E5093BA00E69ACF /* JjingBook */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3BC30A202E5093BA00E69ACF /* JjingBook */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3BA77B6F2E56122E00EBC56C /* Exceptions for "JjingBook" folder in "JjingBook" target */,
+			);
 			path = JjingBook;
 			sourceTree = "<group>";
 		};
@@ -103,9 +124,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BA77B722E56199E00EBC56C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BA77B732E5619A600EBC56C /* Color+Adjust.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3BC30A152E5093BA00E69ACF = {
 			isa = PBXGroup;
 			children = (
+				3BA77B722E56199E00EBC56C /* Extensions */,
 				3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */,
 				3BC30A542E50A19600E69ACF /* Utils */,
 				3BC30A532E50A18E00E69ACF /* Services */,
@@ -116,6 +146,7 @@
 				3BC30A362E5093BF00E69ACF /* JjingBookTests */,
 				3BC30A402E5093BF00E69ACF /* JjingBookUITests */,
 				3BC30A1F2E5093BA00E69ACF /* Products */,
+				3BA77B6C2E5610D700EBC56C /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +190,7 @@
 		3BC30A532E50A18E00E69ACF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3BA77B702E56132D00EBC56C /* Config.swift */,
 				3BFA65F52E50BEE6000601D4 /* Books */,
 				3BFA65F42E50BEDD000601D4 /* Networking */,
 				3BC30A2A2E5093BE00E69ACF /* Persistence.swift */,
@@ -313,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA77B6D2E5610D700EBC56C /* Config.xcconfig in Resources */,
 				3BFA65EF2E50BDC0000601D4 /* APIKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +373,8 @@
 			files = (
 				3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */,
 				3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */,
+				3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */,
+				3BA77B712E56133000EBC56C /* Config.swift in Sources */,
 				3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */,
 				3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */,
 				3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */,
@@ -358,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA77B752E561C6C00EBC56C /* Color+Adjust.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA77B762E561C6C00EBC56C /* Color+Adjust.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +423,7 @@
 /* Begin XCBuildConfiguration section */
 		3BC30A452E5093BF00E69ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -449,6 +487,7 @@
 		};
 		3BC30A462E5093BF00E69ACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -505,6 +544,7 @@
 		};
 		3BC30A482E5093BF00E69ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -514,6 +554,7 @@
 				DEVELOPMENT_TEAM = V83CQR357P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JjingBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -534,6 +575,7 @@
 		};
 		3BC30A492E5093BF00E69ACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -543,6 +585,7 @@
 				DEVELOPMENT_TEAM = V83CQR357P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JjingBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,6 +606,7 @@
 		};
 		3BC30A4B2E5093BF00E69ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -582,6 +626,7 @@
 		};
 		3BC30A4C2E5093BF00E69ACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -601,6 +646,7 @@
 		};
 		3BC30A4E2E5093BF00E69ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -618,6 +664,7 @@
 		};
 		3BC30A4F2E5093BF00E69ACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -1,0 +1,6 @@
+# API keys & secrets
+APIKeys.plist
+Secrets.swift
+
+# API Keys (local only)
+Configs/*.xcconfig

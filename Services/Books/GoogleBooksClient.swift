@@ -36,7 +36,7 @@ struct GoogleBooksClient: BookSearchService {
                 ("q", "isbn:\(isbn)"),
                 ("maxResults","20"),
                 ("printType","books"),
-                ("key", Secrets.googleBooksKey)
+                ("key", Config.googleBooksKey)
             ])
             return r
 
@@ -47,7 +47,7 @@ struct GoogleBooksClient: BookSearchService {
                 ("maxResults","20"),
                 ("orderBy","relevance"),
                 ("printType","books"),
-                ("key", Secrets.googleBooksKey),
+                ("key", Config.googleBooksKey),
                 // 한글이면 한국어 우선
                 ] + (isKorean ? [("langRestrict","ko")] : [])
             )
@@ -58,7 +58,7 @@ struct GoogleBooksClient: BookSearchService {
                 ("maxResults","20"),
                 ("orderBy","relevance"),
                 ("printType","books"),
-                ("key", Secrets.googleBooksKey)
+                ("key", Config.googleBooksKey)
             ])
 
             var merged = try await Set((r1 + r2)) // SearchBook: Hashable

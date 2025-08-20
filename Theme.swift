@@ -25,12 +25,18 @@ extension Color {
 
 enum Palette {
     // 한국어: 민트
-    static let koTop   = Color(hex: "#BFE8DB")
-    static let koBottom = Color(hex: "#9FD8C8")
+    //static let koTop   = Color(hex: "#BFE8DB")
+    //static let koBottom = Color(hex: "#9FD8C8")
+    static let koTop    = Color(hex: "#C9F0E3") // 연한 민트
+    static let koBottom = Color(hex: "#74CBB8") // 진한 청록/민트
 
     // 외국어: 노랑/밝은 오렌지
-    static let enTop   = Color(hex: "#FFE3A2")
-    static let enBottom = Color(hex: "#FFB26B")
+    //static let enTop   = Color(hex: "#FFE3A2")
+    //static let enBottom = Color(hex: "#FFB26B")
+    //static let enTop    = Color(hex: "#FFF7CC") // 레몬 옐로우
+    //static let enBottom = Color(hex: "#FFD966") // 골든 옐로우
+    static let enTop    = Color(hex: "#FFF48C") // 쨍한 레몬 옐로우
+    static let enBottom = Color(hex: "#FFD233") // 상큼한 금빛 노랑
 
     // 텍스트 대비가 약하면 이 스트로크/섀도우가 받쳐줌
     static let stroke = Color.white.opacity(0.28)

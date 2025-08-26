@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B15BE522E5DE17800BAE098 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15BE512E5DE17200BAE098 /* BarcodeScannerView.swift */; };
+		3B15BE542E5DF9BD00BAE098 /* SearchBook+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15BE532E5DF9B500BAE098 /* SearchBook+Merge.swift */; };
+		3B15BE562E5DF9D500BAE098 /* OpenLibraryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15BE552E5DF9CF00BAE098 /* OpenLibraryClient.swift */; };
 		3BA77B712E56133000EBC56C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B702E56132D00EBC56C /* Config.swift */; };
 		3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
 		3BA77B752E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		3B15BE4F2E5DDC3200BAE098 /* Config.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.example.xcconfig; sourceTree = "<group>"; };
 		3B15BE502E5DDC3200BAE098 /* Config.local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.local.xcconfig; sourceTree = "<group>"; };
+		3B15BE512E5DE17200BAE098 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		3B15BE532E5DF9B500BAE098 /* SearchBook+Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBook+Merge.swift"; sourceTree = "<group>"; };
+		3B15BE552E5DF9CF00BAE098 /* OpenLibraryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryClient.swift; sourceTree = "<group>"; };
 		3BA77B702E56132D00EBC56C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3BA77B732E5619A600EBC56C /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
 		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +167,7 @@
 		3BC30A502E50A14000E69ACF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B15BE532E5DF9B500BAE098 /* SearchBook+Merge.swift */,
 				3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */,
 			);
 			path = Models;
@@ -169,6 +176,7 @@
 		3BC30A512E50A18300E69ACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B15BE512E5DE17200BAE098 /* BarcodeScannerView.swift */,
 				3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */,
 				3BC30A572E50A23900E69ACF /* AddBookView.swift */,
 				3BC30A552E50A22A00E69ACF /* BookStackView.swift */,
@@ -188,6 +196,7 @@
 		3BC30A532E50A18E00E69ACF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3B15BE552E5DF9CF00BAE098 /* OpenLibraryClient.swift */,
 				3BA77B702E56132D00EBC56C /* Config.swift */,
 				3BFA65F52E50BEE6000601D4 /* Books */,
 				3BFA65F42E50BEDD000601D4 /* Networking */,
@@ -369,6 +378,8 @@
 			files = (
 				3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */,
 				3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */,
+				3B15BE562E5DF9D500BAE098 /* OpenLibraryClient.swift in Sources */,
+				3B15BE522E5DE17800BAE098 /* BarcodeScannerView.swift in Sources */,
 				3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */,
 				3BA77B712E56133000EBC56C /* Config.swift in Sources */,
 				3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */,
@@ -378,6 +389,7 @@
 				3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */,
 				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,
 				3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */,
+				3B15BE542E5DF9BD00BAE098 /* SearchBook+Merge.swift in Sources */,
 				3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */,
 				3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */,
 				3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */,

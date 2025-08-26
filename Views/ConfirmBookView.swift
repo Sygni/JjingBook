@@ -39,12 +39,19 @@ struct ConfirmBookView: View {
                         switch phase {
                         case .empty: Color.gray.opacity(0.2)
                         case .success(let img): img.resizable().scaledToFill()
-                        case .failure: Color.gray.opacity(0.2)
+                        case .failure: Image(systemName: "book.closed").font(.system(size: 40))
                         @unknown default: Color.gray.opacity(0.2)
-                        }
-                    }
+                    }}
                     .frame(width: 80, height: 120)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                    Text(title.isEmpty ? "제목 없음" : title).font(.headline)
+                    if !author.isEmpty {
+                        Text(author).font(.subheadline).foregroundStyle(.secondary)
+                    }
+                    if let p = Int(pages ?? "") ?? candidate.pageCount {
+                        // 표시용 보강
+                    }
 
                     VStack(alignment: .leading, spacing: 6) {
                         Text(title).font(.headline)

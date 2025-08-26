@@ -23,3 +23,11 @@ enum TextDetect {
         return .normal(q, isKorean: isKorean)
     }
 }
+
+func normalizeISBN(from raw: String) -> String? {
+    let digits = raw.filter(\.isNumber)
+    guard digits.count == 13, (digits.hasPrefix("978") || digits.hasPrefix("979")) else {
+        return nil  // 책 바코드 아님(EAN-13이지만 책이 아닐 수도 있음)
+    }
+    return digits
+}

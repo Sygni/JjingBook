@@ -29,6 +29,8 @@ private struct GBImageLinks: Decodable {
 
 struct GoogleBooksClient: BookSearchService {
     func search(query: String) async throws -> [SearchBook] {
+        
+        /*
         switch TextDetect.parseQuery(query) {
         case .isbn10or13(let isbn):
             // ISBN 단일 검색
@@ -67,7 +69,28 @@ struct GoogleBooksClient: BookSearchService {
                 .sorted { $0.1 > $1.1 }
                 .map { $0.0 }
             return scored
+         
         }
+         */
+        
+        let key = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_BOOKS_KEY") as? String ?? ""
+
+        // URL 파라미터 보강: key, printType, orderBy, country, maxResults
+        var items: [(String, String)] = [
+            ("q", query),                      // "isbn:978..." or "intitle:..."
+            ("key", key),
+            ("maxResults", "20"),
+            ("printType", "books"),
+            ("orderBy", "relevance"),
+            ("country", "KR")                  // 선택: 한국 우선
+        ]
+
+        // (선택) 쿼리가 한글 위주라면 한국어 우선
+        if query.range(of: #"\p{Hangul}"#, options: .regularExpression) != nil {
+            items.append(("langRestrict", "ko"))
+        }
+
+        return try await fetch(qItems: items)   // ⬅️ 이미 GBResponse→SearchBook 매핑 포함
     }
 
     // MARK: - Private

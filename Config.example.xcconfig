@@ -1,2 +1,5 @@
-#include? "Configs/Config.local.xcconfig"   // 있으면 읽고, 없으면 무시
+// 1) 기본값(placeholder)을 먼저 둔다
 GOOGLE_BOOKS_KEY = __SET_IN_LOCAL_FILE__
+
+// 2) 그 다음에 로컬 파일을 include 해서 (있다면) 값을 덮어쓰게 한다
+#include? "Config.local.xcconfig"

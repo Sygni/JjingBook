@@ -30,6 +30,8 @@ final class BookSearchViewModel: ObservableObject {
         self.context = context
         bind()
         preloadAddedIDs()
+        
+        print("🔑 GOOGLE_BOOKS_KEY =", Bundle.main.object(forInfoDictionaryKey: "GOOGLE_BOOKS_KEY") as? String ?? "<nil>")
     }
 
     private func bind() {
@@ -52,14 +54,37 @@ final class BookSearchViewModel: ObservableObject {
         }
     }
 
+    @MainActor
     func performSearch(_ q: String) async {
         errorMessage = nil
         guard !q.trimmingCharacters(in: .whitespaces).isEmpty else {
             results = []; return
         }
         isLoading = true
+        
+        // 1) 쿼리 전처리
+        let query: String = {
+            // 숫자/ISBN만 쓰면 isbn 검색
+            let digits = q.filter(\.isNumber)
+            if digits.count == 13 || digits.count == 10 { return "isbn:\(digits)" }
+
+            // "제목 / 저자" 형태 지원
+            if q.contains("/") {
+                let parts = q.split(separator: "/", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
+                let title = parts.first ?? ""
+                let author = parts.count > 1 ? parts[1] : ""
+                if !author.isEmpty { return "intitle:\(title) inauthor:\(author)" }
+            }
+
+            // 기본은 제목 위주
+            if !q.lowercased().hasPrefix("isbn:") {
+                return "intitle:\(q)"
+            }
+            return q
+        }()
+        
         do {
-            let r = try await service.search(query: q)
+            /*let r = try await service.search(query: q)
             results = r
             // 검색 결과 기준으로 “이미 저장됨” 표시 갱신
             let savedKeys = currentSavedKeys()
@@ -69,6 +94,18 @@ final class BookSearchViewModel: ObservableObject {
                     return savedKeys.contains(k) ? k : nil
                 }
             )
+             */
+            // 2) 1차 요청
+            let r1 = try await service.search(query: query)
+            if !r1.isEmpty {
+                results = r1
+            } else if !query.hasPrefix("isbn:") {
+                // 3) 2차 요청(백업): 일반 풀 텍스트 검색
+                let r2 = try await service.search(query: q)
+                results = r2
+            } else {
+                results = []
+            }
         } catch {
             errorMessage = error.localizedDescription
             results = []
@@ -141,6 +178,19 @@ final class BookSearchViewModel: ObservableObject {
             errorMessage = "Save failed: \(error.localizedDescription)"
             UINotificationFeedbackGenerator().notificationOccurred(.error)
         }
+    }
+    
+    // ISBN 하나로 여러 소스 조회 후 SearchBook 하나로 병합해서 반환
+    func resolveByISBN(_ isbn: String) async -> SearchBook? {
+        // Google Books
+        async let g: [SearchBook] = (try? await service.search(query: "isbn:\(isbn)")) ?? []
+        // Open Library (무료 보강)
+        async let o: SearchBook? = OpenLibraryClient().fetchByISBN(isbn)
+
+        var cands = await g
+        if let oo = await o { cands.append(oo) }
+
+        return cands.merged()   // ← 앞서 추가한 Array<SearchBook>.merged()
     }
 
     private func currentSavedKeys() -> Set<String> {

@@ -1,3 +1,0 @@
-Cat > replacements.txt <<'EOF'
-AIzaSyAH7JcUE7fKiRm1AGVkF6I-s7xXOEdW5Tc=>REMOVED_KEY
-EOF

@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BA77B6D2E5610D700EBC56C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */; };
+		3BA77B712E56133000EBC56C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B702E56132D00EBC56C /* Config.swift */; };
+		3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
+		3BA77B752E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
+		3BA77B762E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
+		3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A232E5093BA00E69ACF /* ContentView.swift */; };
+		3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2A2E5093BE00E69ACF /* Persistence.swift */; };
+		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
+		3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A552E50A22A00E69ACF /* BookStackView.swift */; };
+		3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A572E50A23900E69ACF /* AddBookView.swift */; };
+		3BFA65EF2E50BDC0000601D4 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */; };
+		3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F02E50BE9B000601D4 /* Secrets.swift */; };
+		3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */; };
+		3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */; };
+		3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */; };
+		3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */; };
+		3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FC2E50C167000601D4 /* TextDetect.swift */; };
+		3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */; };
+		3BFA66012E50C6D6000601D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA66002E50C6D6000601D4 /* Theme.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BC30A342E5093BF00E69ACF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC30A162E5093BA00E69ACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC30A1D2E5093BA00E69ACF;
+			remoteInfo = JjingBook;
+		};
+		3BC30A3E2E5093BF00E69ACF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC30A162E5093BA00E69ACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC30A1D2E5093BA00E69ACF;
+			remoteInfo = JjingBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BA77B6C2E5610D700EBC56C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		3BA77B702E56132D00EBC56C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3BA77B732E5619A600EBC56C /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
+		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC30A232E5093BA00E69ACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3BC30A2A2E5093BE00E69ACF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JjingBook.xcdatamodel; sourceTree = "<group>"; };
+		3BC30A332E5093BF00E69ACF /* JjingBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JjingBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JjingBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC30A552E50A22A00E69ACF /* BookStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStackView.swift; sourceTree = "<group>"; };
+		3BC30A572E50A23900E69ACF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		3BFA65F02E50BE9B000601D4 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchService.swift; sourceTree = "<group>"; };
+		3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksClient.swift; sourceTree = "<group>"; };
+		3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65FC2E50C167000601D4 /* TextDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetect.swift; sourceTree = SOURCE_ROOT; };
+		3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBookView.swift; sourceTree = "<group>"; };
+		3BFA66002E50C6D6000601D4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3BA77B6F2E56122E00EBC56C /* Exceptions for "JjingBook" folder in "JjingBook" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3BC30A1D2E5093BA00E69ACF /* JjingBook */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3BC30A202E5093BA00E69ACF /* JjingBook */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3BA77B6F2E56122E00EBC56C /* Exceptions for "JjingBook" folder in "JjingBook" target */,
+			);
+			path = JjingBook;
+			sourceTree = "<group>";
+		};
+		3BC30A362E5093BF00E69ACF /* JjingBookTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JjingBookTests;
+			sourceTree = "<group>";
+		};
+		3BC30A402E5093BF00E69ACF /* JjingBookUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JjingBookUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BC30A1B2E5093BA00E69ACF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A302E5093BF00E69ACF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A3A2E5093BF00E69ACF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BA77B722E56199E00EBC56C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BA77B732E5619A600EBC56C /* Color+Adjust.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BC30A152E5093BA00E69ACF = {
+			isa = PBXGroup;
+			children = (
+				3BA77B722E56199E00EBC56C /* Extensions */,
+				3BFA65EE2E50BDC0000601D4 /* APIKeys.plist */,
+				3BC30A542E50A19600E69ACF /* Utils */,
+				3BC30A532E50A18E00E69ACF /* Services */,
+				3BC30A522E50A18700E69ACF /* ViewModels */,
+				3BC30A512E50A18300E69ACF /* Views */,
+				3BC30A502E50A14000E69ACF /* Models */,
+				3BC30A202E5093BA00E69ACF /* JjingBook */,
+				3BC30A362E5093BF00E69ACF /* JjingBookTests */,
+				3BC30A402E5093BF00E69ACF /* JjingBookUITests */,
+				3BC30A1F2E5093BA00E69ACF /* Products */,
+				3BA77B6C2E5610D700EBC56C /* Config.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		3BC30A1F2E5093BA00E69ACF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BC30A1E2E5093BA00E69ACF /* JjingBook.app */,
+				3BC30A332E5093BF00E69ACF /* JjingBookTests.xctest */,
+				3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC30A502E50A14000E69ACF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BC30A512E50A18300E69ACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65FE2E50C4A2000601D4 /* ConfirmBookView.swift */,
+				3BC30A572E50A23900E69ACF /* AddBookView.swift */,
+				3BC30A552E50A22A00E69ACF /* BookStackView.swift */,
+				3BC30A232E5093BA00E69ACF /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BC30A522E50A18700E69ACF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65FA2E50BF0A000601D4 /* BookSearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3BC30A532E50A18E00E69ACF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3BA77B702E56132D00EBC56C /* Config.swift */,
+				3BFA65F52E50BEE6000601D4 /* Books */,
+				3BFA65F42E50BEDD000601D4 /* Networking */,
+				3BC30A2A2E5093BE00E69ACF /* Persistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3BC30A542E50A19600E69ACF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65F02E50BE9B000601D4 /* Secrets.swift */,
+				3BFA65FC2E50C167000601D4 /* TextDetect.swift */,
+				3BFA66002E50C6D6000601D4 /* Theme.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3BFA65F42E50BEDD000601D4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65F22E50BEBF000601D4 /* HTTPClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3BFA65F52E50BEE6000601D4 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */,
+				3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BC30A1D2E5093BA00E69ACF /* JjingBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC30A472E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBook" */;
+			buildPhases = (
+				3BC30A1A2E5093BA00E69ACF /* Sources */,
+				3BC30A1B2E5093BA00E69ACF /* Frameworks */,
+				3BC30A1C2E5093BA00E69ACF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3BC30A202E5093BA00E69ACF /* JjingBook */,
+			);
+			name = JjingBook;
+			packageProductDependencies = (
+			);
+			productName = JjingBook;
+			productReference = 3BC30A1E2E5093BA00E69ACF /* JjingBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BC30A322E5093BF00E69ACF /* JjingBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC30A4A2E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBookTests" */;
+			buildPhases = (
+				3BC30A2F2E5093BF00E69ACF /* Sources */,
+				3BC30A302E5093BF00E69ACF /* Frameworks */,
+				3BC30A312E5093BF00E69ACF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC30A352E5093BF00E69ACF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3BC30A362E5093BF00E69ACF /* JjingBookTests */,
+			);
+			name = JjingBookTests;
+			packageProductDependencies = (
+			);
+			productName = JjingBookTests;
+			productReference = 3BC30A332E5093BF00E69ACF /* JjingBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BC30A3C2E5093BF00E69ACF /* JjingBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC30A4D2E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBookUITests" */;
+			buildPhases = (
+				3BC30A392E5093BF00E69ACF /* Sources */,
+				3BC30A3A2E5093BF00E69ACF /* Frameworks */,
+				3BC30A3B2E5093BF00E69ACF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC30A3F2E5093BF00E69ACF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3BC30A402E5093BF00E69ACF /* JjingBookUITests */,
+			);
+			name = JjingBookUITests;
+			packageProductDependencies = (
+			);
+			productName = JjingBookUITests;
+			productReference = 3BC30A3D2E5093BF00E69ACF /* JjingBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BC30A162E5093BA00E69ACF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					3BC30A1D2E5093BA00E69ACF = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					3BC30A322E5093BF00E69ACF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3BC30A1D2E5093BA00E69ACF;
+					};
+					3BC30A3C2E5093BF00E69ACF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3BC30A1D2E5093BA00E69ACF;
+					};
+				};
+			};
+			buildConfigurationList = 3BC30A192E5093BA00E69ACF /* Build configuration list for PBXProject "JjingBook" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BC30A152E5093BA00E69ACF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3BC30A1F2E5093BA00E69ACF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BC30A1D2E5093BA00E69ACF /* JjingBook */,
+				3BC30A322E5093BF00E69ACF /* JjingBookTests */,
+				3BC30A3C2E5093BF00E69ACF /* JjingBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BC30A1C2E5093BA00E69ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA77B6D2E5610D700EBC56C /* Config.xcconfig in Resources */,
+				3BFA65EF2E50BDC0000601D4 /* APIKeys.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A312E5093BF00E69ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A3B2E5093BF00E69ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BC30A1A2E5093BA00E69ACF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */,
+				3BFA65F32E50BECB000601D4 /* HTTPClient.swift in Sources */,
+				3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */,
+				3BA77B712E56133000EBC56C /* Config.swift in Sources */,
+				3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */,
+				3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */,
+				3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */,
+				3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */,
+				3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */,
+				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,
+				3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */,
+				3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */,
+				3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */,
+				3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */,
+				3BFA66012E50C6D6000601D4 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A2F2E5093BF00E69ACF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA77B752E561C6C00EBC56C /* Color+Adjust.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC30A392E5093BF00E69ACF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA77B762E561C6C00EBC56C /* Color+Adjust.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BC30A352E5093BF00E69ACF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC30A1D2E5093BA00E69ACF /* JjingBook */;
+			targetProxy = 3BC30A342E5093BF00E69ACF /* PBXContainerItemProxy */;
+		};
+		3BC30A3F2E5093BF00E69ACF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC30A1D2E5093BA00E69ACF /* JjingBook */;
+			targetProxy = 3BC30A3E2E5093BF00E69ACF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3BC30A452E5093BF00E69ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3BC30A462E5093BF00E69ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BC30A482E5093BF00E69ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JjingBook/Preview Content\"";
+				DEVELOPMENT_TEAM = V83CQR357P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JjingBook/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BC30A492E5093BF00E69ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JjingBook/Preview Content\"";
+				DEVELOPMENT_TEAM = V83CQR357P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JjingBook/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3BC30A4B2E5093BF00E69ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V83CQR357P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JjingBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JjingBook";
+			};
+			name = Debug;
+		};
+		3BC30A4C2E5093BF00E69ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V83CQR357P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JjingBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JjingBook";
+			};
+			name = Release;
+		};
+		3BC30A4E2E5093BF00E69ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V83CQR357P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JjingBook;
+			};
+			name = Debug;
+		};
+		3BC30A4F2E5093BF00E69ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA77B6C2E5610D700EBC56C /* Config.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V83CQR357P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JjingBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BC30A192E5093BA00E69ACF /* Build configuration list for PBXProject "JjingBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC30A452E5093BF00E69ACF /* Debug */,
+				3BC30A462E5093BF00E69ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC30A472E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC30A482E5093BF00E69ACF /* Debug */,
+				3BC30A492E5093BF00E69ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC30A4A2E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC30A4B2E5093BF00E69ACF /* Debug */,
+				3BC30A4C2E5093BF00E69ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC30A4D2E5093BF00E69ACF /* Build configuration list for PBXNativeTarget "JjingBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC30A4E2E5093BF00E69ACF /* Debug */,
+				3BC30A4F2E5093BF00E69ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */,
+			);
+			currentVersion = 3BC30A2D2E5093BE00E69ACF /* JjingBook.xcdatamodel */;
+			path = JjingBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3BC30A162E5093BA00E69ACF /* Project object */;
+}

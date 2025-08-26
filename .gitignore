@@ -1,0 +1,14 @@
+# API keys & secrets
+APIKeys.plist
+Secrets.swift
+
+# API Keys (local only)
+Configs/*.xcconfigJjingBook.git/
+Configs/*.xcconfig
+!Configs/Config.example.xcconfig
+JjingBook.git/
+**/filter-repo/
+.DS_Store
+DerivedData/
+**/*.xcuserdatad/
+*.xcscmblueprint

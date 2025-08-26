@@ -12,3 +12,8 @@ JjingBook.git/
 DerivedData/
 **/*.xcuserdatad/
 *.xcscmblueprint
+APIKeys.plist
+Configs/*.xcconfig
+!Configs/Config.example.xcconfig
+JjingBook.git/
+**/filter-repo/

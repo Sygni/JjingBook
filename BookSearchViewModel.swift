@@ -202,4 +202,128 @@ final class BookSearchViewModel: ObservableObject {
     private static func key(title: String, author: String) -> String {
         "\(title.lowercased().trimmingCharacters(in: .whitespaces))|\(author.lowercased())"
     }
+    
+}
+
+// MARK: - Manual Add (검색 없이 직접 추가)
+extension BookSearchViewModel {
+    enum ManualAddError: Error, LocalizedError {
+        case invalidTitle, invalidPages
+        var errorDescription: String? {
+            switch self {
+            case .invalidTitle: return "제목을 입력해 주세요."
+            case .invalidPages: return "페이지 수를 올바르게 입력해 주세요."
+            }
+        }
+    }
+
+    /// 검색 없이 수동 저장
+    @discardableResult
+    func addManualBook(
+        title: String,
+        author: String,
+        pages: Int,
+        isKorean: Bool,
+        dateRead: Date = Date()
+    ) throws {
+        let t = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !t.isEmpty else { throw ManualAddError.invalidTitle }
+        let p = max(1, pages) // 0/음수 방지
+
+        let key = Self.key(title: t, author: author)
+        if currentSavedKeys().contains(key) {
+            // 이미 있으면 상태/햅틱만 업데이트하고 종료
+            addedIDs.insert(key)
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            return
+        }
+
+        let book = Book(context: context)
+        book.title = t
+        book.author = author
+        book.pages = Int32(p)
+        book.isKorean = isKorean
+        book.dateRead = dateRead
+
+        do {
+            try context.save()
+            // 뷰 갱신 보장
+            context.processPendingChanges()
+            addedIDs.insert(key)
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        } catch {
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
+            throw error
+        }
+    }
+}
+
+// MARK: - Edit / Delete for Book
+extension BookSearchViewModel {
+
+    enum EditError: Error, LocalizedError {
+        case invalidTitle, invalidPages
+        var errorDescription: String? {
+            switch self {
+            case .invalidTitle: return "제목을 입력해 주세요."
+            case .invalidPages: return "페이지 수를 올바르게 입력해 주세요."
+            }
+        }
+    }
+
+    /// 기존 Book 편집
+    func update(
+        book: Book,
+        title: String,
+        author: String,
+        pages: Int,
+        isKorean: Bool,
+        dateRead: Date?
+    ) throws {
+        let t = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !t.isEmpty else { throw EditError.invalidTitle }
+        let p = max(1, pages) // 0/음수 방지
+
+        book.title = t
+        book.author = author
+        book.pages = Int32(p)
+        book.isKorean = isKorean
+        book.dateRead = dateRead   // nil 허용 → “읽은 날짜 없음”
+
+        do {
+            try context.save()
+            context.processPendingChanges()
+            // addedIDs 키 갱신(제목/저자 바뀌면)
+            let k = Self.key(title: t, author: author)
+            addedIDs.insert(k)
+        } catch {
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
+            throw error
+        }
+    }
+
+    /// Book 삭제
+    func delete(_ book: Book) throws {
+        context.delete(book)
+        do {
+            try context.save()
+            context.processPendingChanges()
+        } catch {
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
+            throw error
+        }
+    }
+
+    /// (선택) 기존에 dateRead가 nil인 항목들 하단 정렬용 보정
+    /// nil → .distantPast 로 바꾸면, dateRead 내림차순 정렬에서 항상 맨 아래로 감
+    func normalizeMissingDatesToDistantPast() throws {
+        let req = NSFetchRequest<Book>(entityName: "Book")
+        req.predicate = NSPredicate(format: "dateRead == nil")
+        let items = try context.fetch(req)
+        for b in items { b.dateRead = .distantPast }
+        if !items.isEmpty {
+            try context.save()
+            context.processPendingChanges()
+        }
+    }
 }

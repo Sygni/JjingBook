@@ -14,6 +14,7 @@ struct AddBookView: View {
     @State private var showScanner = false
     @State private var selectedBook: SearchBook?
     @State private var navPath: [SearchBook] = []
+    @State private var showManualSheet = false
 
     let openLib = OpenLibraryClient()
     
@@ -94,6 +95,18 @@ struct AddBookView: View {
                     }
                 }
                 .listStyle(.plain)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            showManualSheet = true
+                        } label: {
+                            Label("수동 등록", systemImage: "plus.app")
+                        }
+                    }
+                }
+                .sheet(isPresented: $showManualSheet) {
+                    AddBookManualView(vm: vm)
+                }
             }
             .overlay(alignment: .bottom) {
                 if let t = toast {

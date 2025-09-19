@@ -71,6 +71,7 @@ enum SpineCurve {
     case linear(CGFloat)   // h = k * pages
     case sqrt(CGFloat)     // h = k * sqrt(pages)       (두꺼운 책 과장 줄임)
     case log(CGFloat)      // h = k * log1p(pages)      (가장 완만)
+    case cbrt(CGFloat)     // h = k * cbrt(pages)
 }
 
 // 전역 설정(나중에 설정 화면에서 바꿔도 됨)
@@ -79,6 +80,7 @@ struct SpineConfig {
     static var curve: SpineCurve = .linear(0.12)     // 가장 현실적 표현. 계수값 조절하여 적당한 수준 찾기
     //static var curve: SpineCurve = .sqrt(2.0)      // 변화폭이 적음.....
     //static var curve: SpineCurve = .log(20)       // 전체적으로 너무 다 두껍게 표현됨 -> X
+    //static var curve: SpineCurve = .cbrt(7)         // 전체적으로 차이가 잘 구분되지 않음.. -> X
     
     static var minH: CGFloat = 12                 // 12 -> font 14일 때 안 잘리는 최소 높이 같음
     static var maxH: CGFloat? = nil               // 120 -> 너무 두꺼운 책 상한(원하면 nil)
@@ -98,12 +100,13 @@ struct SpineConfig {
 // effort: 난이도/체감가중치(미래 확장; 지금은 기본 1.0)
 @inline(__always)
 func spineHeight(pages: Int32, isKorean: Bool, effort: CGFloat = 1.0) -> CGFloat {
-    let p = max(0, Int(pages))
+    let p = max(1, Int(pages))
     let base: CGFloat
     switch SpineConfig.curve {
-    case .linear(let k): base = CGFloat(p) * k
-    case .sqrt(let k):  base = sqrt(CGFloat(p)) * k
-    case .log(let k):   base = log1p(CGFloat(p)) * k
+        case .linear(let k): base = CGFloat(p) * k
+        case .sqrt(let k):  base = sqrt(CGFloat(p)) * k
+        case .log(let k):   base = log1p(CGFloat(p)) * k
+        case .cbrt(let k):  base = pow(CGFloat(p), 1.0/3.0) * k
     }
     let langMul = isKorean ? SpineConfig.langMulKO : SpineConfig.langMulForeign
     var h = max(SpineConfig.minH, base * langMul * effort)

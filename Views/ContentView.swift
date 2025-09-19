@@ -20,7 +20,9 @@ struct ContentView: View {
 
     // ✅ 시트 표출 상태
     @State private var showingAddBook = false
-    @State private var bookToDelete: Book?            // ✅ 삭제 대상 보관
+    @State private var editingBook: Book? = nil
+    @State private var showEditSheet = false
+    @State private var bookToDelete: Book? = nil        // ✅ 삭제 대상 보관
 
     var body: some View {
         NavigationView {
@@ -29,12 +31,20 @@ struct ContentView: View {
             let bookW = min(fullW * 0.58, 340)        // 화면의 약 58%, 최대 340pt 정도
             let centerBase = (fullW - bookW) / 2      // 기본은 중앙 정렬
 
-            let list = Array(books)              // FetchedResults -> Array
-            let toneFlags = alternatingToneFlags(for: list)
+            //let list = Array(books)              // FetchedResults -> Array
+              // ✅ nil 날짜를 항상 아래로 보내는 정렬 보정
+              let listSorted: [Book] = Array(books).sorted { a, b in
+                  let da = a.dateRead ?? .distantPast
+                  let db = b.dateRead ?? .distantPast
+                  if da != db { return da > db }                         // 최신이 위
+                  return (a.title ?? "") < (b.title ?? "")               // 보조정렬
+              }
+              
+            let toneFlags = alternatingToneFlags(for: listSorted)
               
             ScrollView {
               LazyVStack(spacing: 0) {
-                ForEach(Array(list.enumerated()), id: \.1.objectID) { idx, book in
+                ForEach(Array(listSorted.enumerated()), id: \.1.objectID) { idx, book in
                   // 각 책마다 시작 여백 결정 (중앙 기준 ±24pt)
                   let key = (book.title ?? "") + "|" + (book.author ?? "")
                   let jitter = startOffsetX(from: key, maxJitter: 24)
@@ -48,14 +58,42 @@ struct ContentView: View {
                     Spacer().frame(width: max(0, start))
                       BookStackView(book: book, tone: tone)
                       .frame(width: bookW, alignment: .leading)
+                      // ✅ 편집/삭제 진입
+                      .contextMenu {
+                          Button {
+                              editingBook = book
+                              showEditSheet = true
+                          } label: {
+                              Label("편집", systemImage: "pencil")
+                          }
+                          Button(role: .destructive) {
+                              bookToDelete = book
+                          } label: {
+                              Label("삭제", systemImage: "trash")
+                          }
+                      }
                     Spacer() // 남은 공간 자동 흡수
                   }
                   .contentShape(Rectangle()) // (길게 눌러 메뉴 잘 뜨게 히트영역 확보)
-                  .contextMenu {
+                  /*.contextMenu {
                     Button(role: .destructive) { bookToDelete = book } label: {
                       Label("삭제", systemImage: "trash")
                     }
-                  }
+                  }*/
+                    // ✅ 스와이프 액션(리스트가 아니라도 잘 동작)
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            bookToDelete = book
+                        } label: {
+                            Label("삭제", systemImage: "trash")
+                        }
+                        Button {
+                            editingBook = book
+                            showEditSheet = true
+                        } label: {
+                            Label("편집", systemImage: "pencil")
+                        }.tint(.blue)
+                    }
                 }
               }
               // 화면이 비어 보일 때 바닥 정렬
@@ -68,9 +106,21 @@ struct ContentView: View {
               Button { showingAddBook = true } label: { Image(systemName: "plus") }
             }
           }
+          // ✅ 추가 시트(기존)
           .sheet(isPresented: $showingAddBook) {
             AddBookView(context: viewContext)
           }
+        // ✅ 편집 시트 (EditBookView 사용)
+            .sheet(isPresented: $showEditSheet) {
+                if let bk = editingBook {
+                    // BookSearchViewModel이 필요한 EditBookView를 위해 즉석 생성
+                    EditBookView(
+                        vm: BookSearchViewModel(context: viewContext),
+                        book: bk
+                    )
+                }
+            }
+          // ✅ 삭제 확인 알럿
           .alert("이 책을 삭제할까요?", isPresented: .constant(bookToDelete != nil)) {
             Button("취소", role: .cancel) { bookToDelete = nil }
             Button("삭제", role: .destructive) {

@@ -7,13 +7,34 @@
 
 import SwiftUI
 
+// NaN/Inf 방지용 안전 클램프 유틸
+@inline(__always)
+private func safeCGFloat(_ x: CGFloat, min minV: CGFloat = 0,
+                         max maxV: CGFloat = .greatestFiniteMagnitude) -> CGFloat {
+    guard x.isFinite else { return minV }
+    if x.isNaN { return minV }
+    return Swift.max(minV, Swift.min(x, maxV))
+}
+
 struct BookStackView: View {
     let book: Book
     var tone: CGFloat = 1.0   // 🔹 1.0=원본, 0.92=살짝 어둡게 등
 
     var body: some View {
         let isKo = book.isKorean
-        let h = spineHeight(pages: book.pages, isKorean: book.isKorean, effort: 1.0)
+        
+        // ✅ pages 안전 가드(0/음수 → 최소 1)
+        let pagesInt = Int(book.pages)
+        let pagesSafe = max(1, pagesInt)
+
+        // ✅ spineHeight 반환값도 추가 가드(최소/최대 높이 범위)
+        let hRaw = spineHeight(pages: Int32(pagesSafe), isKorean: isKo, effort: 1.0)
+        //let h = spineHeight(pages: book.pages, isKorean: book.isKorean, effort: 1.0)
+        //let h = safeCGFloat(hRaw, min: 16, max: 140)   // 최소/최대 높이는 프로젝트에 맞게
+        let minH = SpineConfig.minH
+        let maxH = SpineConfig.maxH ?? .greatestFiniteMagnitude
+        let h = safeCGFloat(hRaw, min: minH, max: maxH)
+
         //let colors = isKo ? [Palette.koTop, Palette.koBottom] : [Palette.enTop, Palette.enBottom]
         let baseTop    = isKo ? Palette.koTop    : Palette.enTop
         let baseBottom = isKo ? Palette.koBottom : Palette.enBottom
@@ -26,7 +47,11 @@ struct BookStackView: View {
         let baseFont: CGFloat = 13
         let minFont: CGFloat = 13   // 11 -> 13으로 했는데 이렇게 해도 책 안 겹치고 해결됨..
         let safeInset: CGFloat = 6 // 위/아래 여유
-        let fontSize = max(minFont, min(baseFont, h - safeInset))
+        
+        // ✅ fontSize도 음수/NaN 차단
+        let fontCandidate = min(baseFont, h - safeInset)
+        let fontSize = safeCGFloat(fontCandidate, min: minFont, max: baseFont)
+        //let fontSize = max(minFont, min(baseFont, h - safeInset))
         
         ZStack {
             RoundedRectangle(cornerRadius: 6, style: .continuous)

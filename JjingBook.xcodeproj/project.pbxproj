@@ -18,6 +18,8 @@
 		3BBEF15B2E7DA43A00964D03 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15A2E7DA43500964D03 /* EditBookView.swift */; };
 		3BBEF15D2E7E6B6900964D03 /* AladinClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15C2E7E6B6700964D03 /* AladinClient.swift */; };
 		3BBEF15F2E7E6B8A00964D03 /* MultiSourceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15E2E7E6B8300964D03 /* MultiSourceSearchService.swift */; };
+		3BBEF1612E7EEBE100964D03 /* BookshelfBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF1602E7EEBDA00964D03 /* BookshelfBackground.swift */; };
+		3BBEF1632E7EF10700964D03 /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF1622E7EF10100964D03 /* AppBackground.swift */; };
 		3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A232E5093BA00E69ACF /* ContentView.swift */; };
 		3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2A2E5093BE00E69ACF /* Persistence.swift */; };
 		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
@@ -62,6 +64,8 @@
 		3BBEF15A2E7DA43500964D03 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
 		3BBEF15C2E7E6B6700964D03 /* AladinClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinClient.swift; sourceTree = "<group>"; };
 		3BBEF15E2E7E6B8300964D03 /* MultiSourceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSourceSearchService.swift; sourceTree = "<group>"; };
+		3BBEF1602E7EEBDA00964D03 /* BookshelfBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfBackground.swift; sourceTree = "<group>"; };
+		3BBEF1622E7EF10100964D03 /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC30A232E5093BA00E69ACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3BC30A2A2E5093BE00E69ACF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 		3BC30A512E50A18300E69ACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3BBEF1622E7EF10100964D03 /* AppBackground.swift */,
+				3BBEF1602E7EEBDA00964D03 /* BookshelfBackground.swift */,
 				3BBEF15A2E7DA43500964D03 /* EditBookView.swift */,
 				3BBEF1582E7D9A9D00964D03 /* AddBookManualView.swift */,
 				3B15BE512E5DE17200BAE098 /* BarcodeScannerView.swift */,
@@ -405,8 +411,10 @@
 				3BBEF15B2E7DA43A00964D03 /* EditBookView.swift in Sources */,
 				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,
 				3BFA65FB2E50BF0A000601D4 /* BookSearchViewModel.swift in Sources */,
+				3BBEF1612E7EEBE100964D03 /* BookshelfBackground.swift in Sources */,
 				3B15BE542E5DF9BD00BAE098 /* SearchBook+Merge.swift in Sources */,
 				3BFA65FD2E50C167000601D4 /* TextDetect.swift in Sources */,
+				3BBEF1632E7EF10700964D03 /* AppBackground.swift in Sources */,
 				3BFA65F92E50BEFA000601D4 /* GoogleBooksClient.swift in Sources */,
 				3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */,
 				3BFA66012E50C6D6000601D4 /* Theme.swift in Sources */,
@@ -588,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -619,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fondue.JjingBook.dev.JjingBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

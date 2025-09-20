@@ -43,6 +43,9 @@ enum Palette {
     static let shadow = Color.black.opacity(0.10)
     
     static let textDark = Color(hex: "#1B1C1E")   // 거의 블랙, 살짝 부드럽게
+    
+    static let titleIcon = Color(hex: "A6C1E1")     // 찡구색
+    static let titleFont = Color(hex: "4A5665")       // 찡구색이랑 어울리는 진한색
 }
 
 // 두께 곡선 타입

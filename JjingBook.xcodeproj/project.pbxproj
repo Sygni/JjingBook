@@ -16,6 +16,8 @@
 		3BA77B762E561C6C00EBC56C /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77B732E5619A600EBC56C /* Color+Adjust.swift */; };
 		3BBEF1592E7D9AA500964D03 /* AddBookManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF1582E7D9A9D00964D03 /* AddBookManualView.swift */; };
 		3BBEF15B2E7DA43A00964D03 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15A2E7DA43500964D03 /* EditBookView.swift */; };
+		3BBEF15D2E7E6B6900964D03 /* AladinClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15C2E7E6B6700964D03 /* AladinClient.swift */; };
+		3BBEF15F2E7E6B8A00964D03 /* MultiSourceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBEF15E2E7E6B8300964D03 /* MultiSourceSearchService.swift */; };
 		3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A232E5093BA00E69ACF /* ContentView.swift */; };
 		3BC30A2B2E5093BE00E69ACF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2A2E5093BE00E69ACF /* Persistence.swift */; };
 		3BC30A2E2E5093BE00E69ACF /* JjingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC30A2C2E5093BE00E69ACF /* JjingBook.xcdatamodeld */; };
@@ -58,6 +60,8 @@
 		3BA77B732E5619A600EBC56C /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
 		3BBEF1582E7D9A9D00964D03 /* AddBookManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookManualView.swift; sourceTree = "<group>"; };
 		3BBEF15A2E7DA43500964D03 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		3BBEF15C2E7E6B6700964D03 /* AladinClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinClient.swift; sourceTree = "<group>"; };
+		3BBEF15E2E7E6B8300964D03 /* MultiSourceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSourceSearchService.swift; sourceTree = "<group>"; };
 		3BC30A1E2E5093BA00E69ACF /* JjingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JjingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC30A232E5093BA00E69ACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3BC30A2A2E5093BE00E69ACF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -202,9 +206,9 @@
 		3BC30A532E50A18E00E69ACF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3B15BE552E5DF9CF00BAE098 /* OpenLibraryClient.swift */,
+				3BBEF15E2E7E6B8300964D03 /* MultiSourceSearchService.swift */,
 				3BA77B702E56132D00EBC56C /* Config.swift */,
-				3BFA65F52E50BEE6000601D4 /* Books */,
+				3BFA65F52E50BEE6000601D4 /* Clients */,
 				3BFA65F42E50BEDD000601D4 /* Networking */,
 				3BC30A2A2E5093BE00E69ACF /* Persistence.swift */,
 			);
@@ -229,13 +233,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		3BFA65F52E50BEE6000601D4 /* Books */ = {
+		3BFA65F52E50BEE6000601D4 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
 				3BFA65F82E50BEF6000601D4 /* GoogleBooksClient.swift */,
 				3BFA65F62E50BEEC000601D4 /* BookSearchService.swift */,
+				3BBEF15C2E7E6B6700964D03 /* AladinClient.swift */,
+				3B15BE552E5DF9CF00BAE098 /* OpenLibraryClient.swift */,
 			);
-			path = Books;
+			path = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,12 +393,14 @@
 				3B15BE562E5DF9D500BAE098 /* OpenLibraryClient.swift in Sources */,
 				3BBEF1592E7D9AA500964D03 /* AddBookManualView.swift in Sources */,
 				3B15BE522E5DE17800BAE098 /* BarcodeScannerView.swift in Sources */,
+				3BBEF15D2E7E6B6900964D03 /* AladinClient.swift in Sources */,
 				3BA77B742E561C6500EBC56C /* Color+Adjust.swift in Sources */,
 				3BA77B712E56133000EBC56C /* Config.swift in Sources */,
 				3BFA65F12E50BE9B000601D4 /* Secrets.swift in Sources */,
 				3BFA65F72E50BEF1000601D4 /* BookSearchService.swift in Sources */,
 				3BC30A582E50A23C00E69ACF /* AddBookView.swift in Sources */,
 				3BC30A562E50A23300E69ACF /* BookStackView.swift in Sources */,
+				3BBEF15F2E7E6B8A00964D03 /* MultiSourceSearchService.swift in Sources */,
 				3BFA65FF2E50C4A6000601D4 /* ConfirmBookView.swift in Sources */,
 				3BBEF15B2E7DA43A00964D03 /* EditBookView.swift in Sources */,
 				3BC30A242E5093BA00E69ACF /* ContentView.swift in Sources */,

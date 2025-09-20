@@ -74,20 +74,35 @@ struct GoogleBooksClient: BookSearchService {
          */
         
         let key = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_BOOKS_KEY") as? String ?? ""
-
+        let isISBN = query.trimmingCharacters(in: .whitespaces).hasPrefix("isbn:")
+        
         // URL 파라미터 보강: key, printType, orderBy, country, maxResults
         var items: [(String, String)] = [
             ("q", query),                      // "isbn:978..." or "intitle:..."
             ("key", key),
-            ("maxResults", "20"),
+            //("maxResults", "20"),
             ("printType", "books"),
-            ("orderBy", "relevance"),
-            ("country", "KR")                  // 선택: 한국 우선
+            //("orderBy", "relevance"),
+            ("country", "KR"),                  // 선택: 한국 우선
+            ("projection", "full"),             // 더 풍부한 volumeInfo
+            /*(
+              "fields",              // 필요한 필드만 슬림하게
+              "items(volumeInfo/title,volumeInfo/authors,volumeInfo/industryIdentifiers,volumeInfo/pageCount,volumeInfo/imageLinks,volumeInfo/language,volumeInfo/publishedDate,volumeInfo/publisher,volumeInfo/printType),totalItems"
+            )*/
         ]
 
-        // (선택) 쿼리가 한글 위주라면 한국어 우선
-        if query.range(of: #"\p{Hangul}"#, options: .regularExpression) != nil {
-            items.append(("langRestrict", "ko"))
+        // ISBN 검색이면 정렬/언어 제한 필요 없음, 결과 수도 소폭
+        if isISBN {
+            items.append(("maxResults", "5"))
+        } else {
+            items.append(contentsOf: [
+                ("maxResults", "20"),
+                ("orderBy", "relevance")
+            ])
+            // (선택) 쿼리 한글이면 한국어 우선
+            if query.range(of: #"\p{Hangul}"#, options: .regularExpression) != nil {
+                items.append(("langRestrict", "ko"))
+            }
         }
 
         return try await fetch(qItems: items)   // ⬅️ 이미 GBResponse→SearchBook 매핑 포함

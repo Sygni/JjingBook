@@ -24,7 +24,8 @@ final class BookSearchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let context: NSManagedObjectContext
 
-    init(service: BookSearchService = GoogleBooksClient(),
+    //init(service: BookSearchService = GoogleBooksClient(),
+    init(service: BookSearchService = MultiSourceSearchService(),
          context: NSManagedObjectContext) {
         self.service = service
         self.context = context
